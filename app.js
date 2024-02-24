@@ -59,3 +59,5 @@ app.post("/shorten", async (req, res) => {
     res.status(500).send("Invalid URL");
   }
 });
+
+module.exports = app;
