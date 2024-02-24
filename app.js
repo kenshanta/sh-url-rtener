@@ -16,15 +16,12 @@ const connectDB = async () => {
 
 connectDB();
 
-// Set EJS as the view engine
 app.set("view engine", "ejs");
 
-// Middleware for handling JSON, URL-encoded data, and serving static files
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
-// start the server and listen on PORT 7000
 app.listen(process.env.PORT || 3000, () => {
   console.log(`App running on port ${process.env.PORT}...`);
 });
@@ -32,7 +29,6 @@ app.listen(process.env.PORT || 3000, () => {
 app.get("/", async (req, res) => {
   try {
     const urls = await Url.find();
-    console.log("-----------------------", urls);
     res.render("index", { urls });
   } catch (error) {
     res.status(500).send("Internal server error");
@@ -46,7 +42,6 @@ app.get("/:shortUrl", async (req, res) => {
     if (!url) {
       return res.status(400).send("URL not found");
     }
-    // Increment the click count and save the updated URL
     url.clicks++;
     url.save();
     res.redirect(url.fullUrl);
