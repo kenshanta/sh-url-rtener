@@ -1,6 +1,6 @@
 {
-  "name": "sh_url_rt",
-  "version": "1.0.0",
+  "name": "sh_url_t",
+  "version": "1.1.0",
   "description": "url shortener written in node.js",
   "main": "app.js",
   "scripts": {
