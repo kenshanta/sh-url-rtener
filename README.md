@@ -1,4 +1,4 @@
-# SH(URL)T a history backed - Short version of any url;
+## `SH(URL)T` A history backed - shortened version of any legit url
 
 This Node.js project is designed to shorten URLs and store their history, providing users with a convenient way to shorten and track their shortened links.
 
@@ -8,44 +8,39 @@ This Node.js project is designed to shorten URLs and store their history, provid
 - **History Tracking**: Maintain a record of all shortened URLs for future reference.
 - **Basic User-Friendly Interface**: Just a regular nodeJS based dialog with inputs
 
-## TODO:
+### TODO:
 
 - _Add styling_
-  - _Fonts_
+  - _Fonts_ 
   - _Theme_
   - _Animations?_
   - _Toaster_
+
 - **global IP for general international usage**
 
 ## Installation
 
 To install and run the project, follow these steps:
 
-1. Clone the repository:
+1.# Clone the repository:
 
    ```bash
-   git clone https://github.com/kenshanta/sh-url-tener.git
+   git clone https://github.com/kenshanta/sh-url-t.git
    ```
 
-2. Navigate to the project directory:
-
-   ```bash
-   cd url-shortener
-   ```
-
-3. Install dependencies:
+2.# Install dependencies:
 
    ```bash
    npm install
    ```
 
-4. Start the server:
+3.# Start the server:
 
    ```bash
    npm start
    ```
 
-5. Access the application in your web browser at `http://localhost:3000`.
+4.# Access the application in your web browser at `http://localhost:3000`.
 
 ## Usage
 
@@ -58,14 +53,15 @@ To install and run the project, follow these steps:
 
 - **Node.js**: Backend environment for handling URL shortening and history tracking logic.
 - **Express.js**: Web framework used for routing and handling HTTP requests.
-- **MongoDB**: Database system for storing URL history data.
+- **MongoDB**: Database system for storing URL history data + _tracking number of clicks per URL_.
 - **HTML/CSS/JavaScript**: Frontend development for the user interface and interaction.
 
 ## Contributors
 
-- [Your Name](https://github.com/yourusername)
-- [Contributor 1](https://github.com/contributor1)
-- [Contributor 2](https://github.com/contributor2)
+Contributions are more than welcome, to do so you can mention your name in a `contributions.md` file with the following
+info:
+- [Your Name](https://github.com/kenshanta)
+
 
 ## License
 
