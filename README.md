@@ -54,13 +54,13 @@ To install and run the project, follow these steps:
 
 ### 📝 TODO:
 
-💄 _Add styling_
-  📝 _Fonts_ 
-  📝 _Theme_
-  📝 _Animations?_
-  📝 _Toaster_
-
 🌐 **global IP for general international usage**
+
+💄 _Add styling_ 
+- 📝 _Fonts_ 
+- 📝 _Theme_ 
+- 📝 _Animations?_
+- 📝 _Toaster_s
   
 
 ## 👯 Contributors:
