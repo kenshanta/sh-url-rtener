@@ -57,10 +57,12 @@ To install and run the project, follow these steps:
 🌐 **global IP for general international usage**
 
 💄 _Add styling_ 
-- 📝 _Fonts_ 
 - 📝 _Theme_ 
-- 📝 _Animations?_
-- 📝 _Toaster_s
+- 📝 _Toasters_
+- 📝 _Banner alignment_
+  
+🌐 _State Management_
+- 📝 _Locale updates_
   
 
 ## 👯 Contributors:
