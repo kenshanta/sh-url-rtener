@@ -8,23 +8,6 @@ const pool = new Pool({
   },
 });
 
-async function createUrlTable() {
-  try {
-    const createTableSql = `
-      CREATE TABLE IF NOT EXISTS urls (
-        id SERIAL PRIMARY KEY,
-        full_url TEXT NOT NULL,
-        short_url TEXT NOT NULL UNIQUE,
-        clicks INTEGER DEFAULT 0
-      );
-    `;
-    await pool.query(createTableSql);
-    console.log("URL table created or already exists.");
-  } catch (error) {
-    console.error("Error creating URL table:", error);
-  }
-}
-
 async function createUrl(fullUrl) {
   try {
     const shortUrl = generateShortUrl();
@@ -82,8 +65,6 @@ async function incrementClickCount(shortUrl) {
 function generateShortUrl() {
   return shortId.generate();
 }
-
-createUrlTable();
 
 module.exports = {
   createUrl,
