@@ -1,13 +1,14 @@
 require("dotenv").config();
 const express = require("express");
-const mongoose = require("mongoose");
+const { Client } = require("pg");
 const Url = require("./models/urlModel");
 const app = express();
+const client = new Client(process.env.DATABASE_URL);
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log("mongoDB connected.");
+    await client.connect();
+    console.log("PostgresDb connected.");
   } catch (err) {
     console.log(err);
     process.exit(1);
@@ -31,7 +32,7 @@ app.get("/", async (req, res) => {
     const urls = await Url.find();
     res.render("index", { urls });
   } catch (error) {
-    res.status(500).send("Internal server error");
+    res.status(400).send("Internal server errorz");
   }
 });
 
