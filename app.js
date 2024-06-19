@@ -29,10 +29,10 @@ app.listen(process.env.PORT || 3000, () => {
 
 app.get("/", async (req, res) => {
   try {
-    const urls = await Url.find();
-    res.render("index", { urls });
+    const urls = await Url.getAllUrls();
+    res.render("index", { urls: urls.rows });
   } catch (error) {
-    res.status(400).send("Internal server errorz");
+    res.status(500).send(`${error}`);
   }
 });
 
@@ -40,11 +40,11 @@ app.get("/:shortUrl", async (req, res) => {
   try {
     const shortUrl = req.params.shortUrl;
     const url = await Url.findOne({ shortUrl });
+    // TODO: create query to handle updating a specific todo count
     if (!url) {
       return res.status(400).send("URL not found");
     }
     url.clicks++;
-    url.save();
     res.redirect(url.fullUrl);
   } catch (error) {
     res.status(500).send("URL not found");
@@ -53,11 +53,10 @@ app.get("/:shortUrl", async (req, res) => {
 
 app.post("/shorten", async (req, res) => {
   try {
-    const url = new Url({ fullUrl: req.body.fullUrl });
-    await url.save();
+    const url = await Url.createUrl(req.body.fullUrl);
     res.redirect("/");
   } catch (error) {
-    res.status(500).send("Invalid URL");
+    res.status(500).send(`${error}`);
   }
 });
 
