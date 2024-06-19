@@ -54,6 +54,19 @@ async function getUrlByShortUrl(shortUrl) {
   }
 }
 
+async function getAllUrls() {
+  try {
+    const selectSql = `
+      SELECT * FROM urls;
+    `;
+    const result = await pool.query(selectSql);
+    return result;
+  } catch (error) {
+    console.error("Error getting URLs:", error);
+    throw error;
+  }
+}
+
 async function incrementClickCount(shortUrl) {
   try {
     const updateSql = `
@@ -76,4 +89,5 @@ module.exports = {
   createUrl,
   getUrlByShortUrl,
   incrementClickCount,
+  getAllUrls,
 };
