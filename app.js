@@ -10,18 +10,18 @@ const connectDB = async () => {
     await client.connect();
     console.log("PostgresDb connected.");
   } catch (err) {
-    console.log(err);
+    console.log("error postgresdB:", err);
     process.exit(1);
   }
 };
 
 connectDB();
-
+app.set("views", __dirname + "./views");
 app.set("view engine", "ejs");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static("public"));
+app.use(express.static(__dirname + "public"));
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`App running on port ${process.env.PORT}...`);
@@ -47,7 +47,7 @@ app.get("/:shortUrl", async (req, res) => {
     url.clicks++;
     res.redirect(url.fullUrl);
   } catch (error) {
-    res.status(500).send("URL not found");
+    res.status(500).send("internal err: URL not found");
   }
 });
 
