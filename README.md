@@ -55,13 +55,13 @@ To install and run the project, follow these steps:
 🌐 **global IP for general international usage**
 
 💄 _Add styling_ 
-- 📝 _Theme_ 
+- 📝 _Theme and universal font_ 
 - 📝 _Toasters_
+- ✍️ _Responsive design_
 - 📝 _Banner alignment_
   
 🌐 _State Management_
-- 📝 _Locale updates_
-  
+- 📝 _Loader_
 
 ## 👯 Contributors:
 
