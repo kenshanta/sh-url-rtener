@@ -1,4 +1,4 @@
-const { Pool } = require("pg"); // Import PostgreSQL client library
+const { Pool } = require("pg");
 const shortId = require("shortid");
 
 const pool = new Pool({
@@ -23,7 +23,6 @@ async function createUrl(fullUrl) {
   }
 }
 
-// Function to get a URL by its short URL
 async function getUrlByShortUrl(shortUrl) {
   try {
     const selectSql = `
