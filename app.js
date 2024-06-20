@@ -16,13 +16,12 @@ const connectDB = async () => {
 };
 
 connectDB();
-console.log(__dirname, "__dirNAme -- - - -- - - - --- - - - ");
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(__dirname + "public"));
+app.use(express.static(__dirname + "/public"));
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`App running on port ${process.env.PORT}...`);
@@ -33,30 +32,7 @@ app.get("/", async (req, res) => {
     const urls = await Url.getAllUrls();
     res.render("index", { urls: urls.rows });
   } catch (error) {
-    res.status(500).send(`${error}`);
-  }
-});
-
-app.get("/:shortUrl", async (req, res) => {
-  try {
-    const shortUrl = req.params.shortUrl;
-    const url = await Url.findOne({ shortUrl });
-    // TODO: create query to handle updating a specific todo count
-    if (!url) {
-      return res.status(400).send("URL not found");
-    }
-    url.clicks++;
-    res.redirect(url.fullUrl);
-  } catch (error) {
-    res.status(500).send("internal err: URL not found");
-  }
-});
-
-app.post("/shorten", async (req, res) => {
-  try {
-    const url = await Url.createUrl(req.body.fullUrl);
-    res.redirect("/");
-  } catch (error) {
+    console.log("failed to get all urls. Error:", error);
     res.status(500).send(`${error}`);
   }
 });
