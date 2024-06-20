@@ -16,7 +16,8 @@ const connectDB = async () => {
 };
 
 connectDB();
-app.set("views", __dirname + "./views");
+console.log(__dirname, "__dirNAme -- - - -- - - - --- - - - ");
+app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 
 app.use(express.json());
