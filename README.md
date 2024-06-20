@@ -52,7 +52,7 @@ To install and run the project, follow these steps:
 
 ### 📝 TODO:
 
-🌐 **global IP for general international usage**
+✅ **global IP for general international usage**
 
 💄 _Add styling_ 
 - 📝 _Theme and universal font_ 
@@ -62,6 +62,7 @@ To install and run the project, follow these steps:
   
 🌐 _State Management_
 - 📝 _Loader_
+- 📝 _Route Redirection_
 
 ## 👯 Contributors:
 
