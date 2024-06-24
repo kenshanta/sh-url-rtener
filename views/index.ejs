@@ -21,6 +21,8 @@
           <tr>
             <th>Full URL</th>
             <th>Short URL</th>
+            <th># of Clicks</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +40,18 @@
               >
             </td>
             <td><%= url.clicks %></td>
+            <td>
+              <form method="post" action="/delete">
+                <button
+                  name="shortUrl"
+                  id="shortUrl"
+                  type="submit"
+                  value="<%= url.short_url %>"
+                >
+                  Delete
+                </button>
+              </form>
+            </td>
           </tr>
           <% }); %> <% } else { %>
           <tr>

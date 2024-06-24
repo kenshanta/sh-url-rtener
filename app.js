@@ -36,5 +36,22 @@ app.get("/", async (req, res) => {
     res.status(500).send(`${error}`);
   }
 });
-
+app.post("/shorten", async (req, res) => {
+  try {
+    await Url.createUrl(req.body.fullUrl);
+    res.redirect("/");
+  } catch (error) {
+    console.log("failed to get all urls. Error:", error);
+    res.status(500).send(`${error}`);
+  }
+});
+app.post("/delete", async (req, res) => {
+  try {
+    await Url.deleteUrl(req.body.shortUrl);
+    res.redirect("/");
+  } catch (error) {
+    console.log("failed to get all urls. Error:", error);
+    res.status(500).send(`${error}`);
+  }
+});
 module.exports = app;
