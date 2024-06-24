@@ -23,6 +23,19 @@ async function createUrl(fullUrl) {
   }
 }
 
+async function deleteUrl(shortUrl) {
+  try {
+    const deleteSql = `
+      DELETE FROM urls WHERE short_url = $1;
+    `;
+    await pool.query(deleteSql, [shortUrl]);
+    return;
+  } catch (error) {
+    console.error("Error deleting URL:", error);
+    throw error;
+  }
+}
+
 async function getUrlByShortUrl(shortUrl) {
   try {
     const selectSql = `
@@ -70,4 +83,5 @@ module.exports = {
   getUrlByShortUrl,
   incrementClickCount,
   getAllUrls,
+  deleteUrl,
 };
