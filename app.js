@@ -54,4 +54,13 @@ app.post("/delete", async (req, res) => {
     res.status(500).send(`${error}`);
   }
 });
+app.post("/:shortUrl", async (req, res) => {
+  try {
+    await Url.incrementClickCount(req.body.shortUrl);
+    res.redirect("/");
+  } catch (error) {
+    console.log("failed to get all urls. Error:", error);
+    res.status(500).send(`${error}`);
+  }
+});
 module.exports = app;
