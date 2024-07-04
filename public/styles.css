@@ -3,17 +3,14 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   background-color: #f5f5f5;
-  min-height: 100%;
-  min-width: 100%;
+  padding: 0.5rem;
 }
 
 .container {
-  margin: 0;
   background-color: #fff;
-  padding: 0.9rem;
+  padding: 0.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  width: 100%;
+  min-height: 100%;
 }
 
 h1,
@@ -38,11 +35,12 @@ input {
 }
 
 button {
-  padding: 8px;
+  padding: 0.1rem;
   cursor: pointer;
   background-color: #333;
   color: #fff;
   border: none;
+  font-size: 1.3rem;
 }
 
 table {
@@ -54,9 +52,8 @@ table {
 th,
 td {
   border: 1px solid #ddd;
-  padding: 0.7rem 0 0.7rem 0.7rem;
+  padding: 0.7rem;
   text-align: left;
-  /* width: 80%; */
 }
 
 th {
@@ -72,18 +69,34 @@ a:hover {
   text-decoration: underline;
 }
 
+.buttontd {
+  /* padding: 0.2rem ; */
+  margin: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
 @media (max-width: 945px) {
-  body,
   .container {
-    /* margin: 3px; */
-    min-height: 100%;
-    min-width: 100%;
+    padding: 0.5rem;
+    min-height: 85%;
   }
   table {
-    font-size: 11px;
+    font-size: 0.5rem;
+  }
+  button {
+    font-size: 0.7rem;
   }
   th,
   td {
-    padding: 0.3rem 0 0.3rem 0.3rem;
+    padding: 0.2rem;
+  }
+  .buttontd {
+    padding: 0.2rem;
+    text-align: center;
+    align-self: center;
   }
 }
