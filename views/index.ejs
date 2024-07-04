@@ -26,7 +26,7 @@
           </tr>
         </thead>
         <tbody>
-          <% if (urls) { %> <% urls.forEach(url => { %>
+          <% if (urls && urls.length >0) { %> <% urls.forEach(url => { %>
           <tr>
             <td>
               <a href="<%= url.full_url %>" target="_blank"
@@ -40,8 +40,8 @@
               >
             </td>
             <td><%= url.clicks %></td>
-            <td>
-              <form method="post" action="/delete">
+            <td align="center">
+              <form method="post" action="/delete" class="buttontd">
                 <button
                   name="shortUrl"
                   id="shortUrl"
