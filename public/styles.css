@@ -13,6 +13,14 @@ body {
   min-height: 100%;
 }
 
+.full-url {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 68vw;
+}
+
 h1,
 h2 {
   color: #333;
@@ -30,8 +38,8 @@ label {
 
 input {
   width: calc(100% - 20px);
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 0.5rem;
+  margin-bottom: 0.7rem;
 }
 
 button {
@@ -44,7 +52,6 @@ button {
 }
 
 table {
-  width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
@@ -54,11 +61,12 @@ td {
   border: 1px solid #ddd;
   padding: 0.7rem;
   text-align: left;
+  color: #9eb3c2;
 }
 
 th {
   background-color: #333;
-  color: #fff;
+  color: #9eb3c2;
 }
 
 a {
@@ -77,6 +85,54 @@ a:hover {
   align-items: center;
   justify-content: center;
   align-self: center;
+}
+
+.loader {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #333;
+  animation: prixClipFix 2s linear infinite;
+}
+.loader::after {
+  inset: 8px;
+  transform: rotate3d(90, 90, 0, 180deg);
+  border-color: #9eb3c2;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  75%,
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+}
+
+@media (max-width: 945px) {
 }
 
 @media (max-width: 945px) {
@@ -98,5 +154,8 @@ a:hover {
     padding: 0.2rem;
     text-align: center;
     align-self: center;
+  }
+  .full-url {
+    width: 50vw;
   }
 }
