@@ -3,11 +3,11 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   background-color: #f5f5f5;
-  padding: 0.5rem;
 }
 
 .container {
-  background-color: #fff;
+  display: flex;
+  flex-direction: column;
   padding: 0.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   min-height: 100%;
@@ -158,4 +158,15 @@ a:hover {
   .full-url {
     width: 50vw;
   }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: black !important;
+    color: white;
+  }
+}
+.dark-mode {
+  background-color: black;
+  color: pink;
 }
