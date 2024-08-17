@@ -18,9 +18,17 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 68vw;
+  width: 59vw;
 }
-
+.short-url {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* border: ; */
+  margin: 0;
+  padding: 0.7rem;
+}
 h1,
 h2 {
   color: #333;
@@ -109,7 +117,10 @@ a:hover {
   transform: rotate3d(90, 90, 0, 180deg);
   border-color: #9eb3c2;
 }
-
+.light-mode {
+  background-color: #fff;
+  color: #333;
+}
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -156,7 +167,7 @@ a:hover {
     align-self: center;
   }
   .full-url {
-    width: 50vw;
+    width: 49vw;
   }
 }
 
@@ -165,8 +176,12 @@ a:hover {
     background-color: black !important;
     color: white;
   }
-}
-.dark-mode {
-  background-color: black;
-  color: pink;
+  .dark-mode {
+    background-color: black;
+    color: pink;
+  }
+  .light-mode {
+    background-color: #fff;
+    color: green;
+  }
 }
