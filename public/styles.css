@@ -173,15 +173,7 @@ a:hover {
 
 @media screen and (prefers-color-scheme: dark) {
   body {
-    background-color: black !important;
+    background-color: rgb(26, 25, 25);
     color: white;
-  }
-  .dark-mode {
-    background-color: black;
-    color: pink;
-  }
-  .light-mode {
-    background-color: #fff;
-    color: green;
   }
 }
