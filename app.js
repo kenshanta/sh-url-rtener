@@ -45,6 +45,7 @@ app.post("/shorten", async (req, res) => {
     res.status(500).send(`${error}`);
   }
 });
+
 app.post("/delete", async (req, res) => {
   try {
     await Url.deleteUrl(req.body.shortUrl);
