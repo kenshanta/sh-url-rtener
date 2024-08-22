@@ -1,6 +1,6 @@
-## `SH(URL)T` A history backed - shortened version of any legit url 🤏🏼
+## `SH_URL-T` A history backed - shortened version of any legit url 🤏🏼
 
- This Node.js project is designed to shorten URLs and store their history, providing users with a convenient way to shorten and track their shortened links.
+ This Node.js backed-up project is designed to shorten URLs and store their history utilizing PostgresDB hosted on [Neon](https://neon.tech/docs/introduction) platform; providing users with a convenient way to shorten and track shared shortened links.
 
 ## TechStack:
 <div>
@@ -57,12 +57,12 @@ To install and run the project, follow these steps:
 💄 _Add styling_ 
 - 📝 _Theme and universal font_ 
 - 📝 _Toasters_
-- ✍️ _Responsive design_
-- 📝 _Banner alignment_
+- ✅ _Responsive design_
+- ✅ _Banner alignment_
   
 🌐 _State Management_
 - 📝 _Loader_
-- 📝 _Route Redirection_
+- ✅ _Route Redirection_
 
 ## 👯 Contributors:
 
