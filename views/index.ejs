@@ -7,45 +7,10 @@
     <title>URL Shortener</title>
     <link rel="icon" href="/favicon.ico" />
   </head>
-  <script>
-    const myButton = document.getElementById("myButton");
-
-    export let isDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
-    myButton.addEventListener("click", () => {
-      if (isDarkMode) {
-        document.body.classList.remove("dark-mode");
-        document.body.classList.add("light-mode");
-        isDarkMode = false;
-      } else {
-        document.body.classList.add("dark-mode");
-        document.body.classList.remove("light-mode");
-        isDarkMode = true;
-      }
-    });
-    const copyBtns = document.querySelectorAll(".copy-btn");
-
-    copyBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const url = btn.getAttribute("data-url");
-        navigator.clipboard
-          .writeText(url)
-          .then(() => {
-            alert(`Copied ${url} to clipboard`);
-          })
-          .catch((err) => {
-            console.error("Error copying to clipboard:", err);
-          });
-      });
-    });
-  </script>
   <body>
     <div class="container">
       <div>
         <h1>URL Shortener</h1>
-
         <button id="myButton">Dark Mode</button>
       </div>
       <form action="/shorten" method="post">
@@ -54,7 +19,7 @@
         <button type="submit">Shorten</button>
       </form>
       <table>
-        <% if (urls.loading ) { %>
+        <% if (urls.loading) { %>
         <div class="loader"></div>
         <% } %>
         <thead>
@@ -66,20 +31,19 @@
           </tr>
         </thead>
         <tbody>
-          <% if (urls && urls.length >0) { %> <% urls.forEach(url => { %>
+          <% if (urls && urls.length > 0) { %> <% urls.forEach(url => { %>
           <tr>
             <td>
-              <a href="<%= url.full_url %>" target="_blank" class="full-url"
-                ><%= url.full_url %></a
-              >
+              <a href="<%= url.full_url %>" target="_blank" class="full-url">
+                <%= url.full_url %>
+              </a>
             </td>
-
             <td class="short-url">
-              <a href="<%= url.full_url %>" target="_blank"
-                ><%= url.short_url %></a
-              >
+              <a href="<%= url.short_url %>" target="_blank">
+                <%= url.short_url %>
+              </a>
               <button class="copy-btn" data-url="<%= url.full_url %>">
-                Co
+                Copy
               </button>
             </td>
             <td><%= url.clicks %></td>
@@ -98,11 +62,48 @@
           </tr>
           <% }); %> <% } else { %>
           <tr>
-            <td colspan="3">No URLs found.</td>
+            <td colspan="4">No URLs found.</td>
           </tr>
           <% } %>
         </tbody>
       </table>
     </div>
+
+    <!-- JavaScript to toggle dark mode and handle copy button functionality -->
+    <script>
+      const myButton = document.getElementById('myButton');
+
+      let isDarkMode = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches;
+
+      myButton.addEventListener('click', () => {
+        if (isDarkMode) {
+          document.body.classList.remove('dark-mode');
+          document.body.classList.add('light-mode');
+          isDarkMode = false;
+        } else {
+          document.body.classList.add('dark-mode');
+          document.body.classList.remove('light-mode');
+          isDarkMode = true;
+        }
+      });
+
+      const copyBtns = document.querySelectorAll('.copy-btn');
+
+      copyBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const url = btn.getAttribute('data-url');
+          navigator.clipboard
+            .writeText(url)
+            .then(() => {
+              alert(`Copied ${url} to clipboard`);
+            })
+            .catch((err) => {
+              console.error('Error copying to clipboard:', err);
+            });
+        });
+      });
+    </script>
   </body>
 </html>
