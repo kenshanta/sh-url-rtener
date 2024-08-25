@@ -70,6 +70,12 @@ Contributions are more than welcome, you can always add your name in a `contribu
 format:
 - [Your Name](https://github.com/kenshanta)
 
+## Contributors:
+
+ <a href="https://github.com/kenshanta/sh-url-t/graphs/contributors">
+   <img src="https://contrib.rocks/image?repo=kenshanta/sh-url-t"/>
+ </a>
+
 
 ## 📇 License:
 
