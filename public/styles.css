@@ -87,7 +87,6 @@ a:hover {
 }
 
 .buttontd {
-  /* padding: 0.2rem ; */
   margin: 0;
   text-align: center;
   display: flex;
@@ -121,15 +120,6 @@ a:hover {
   border-color: #9eb3c2;
 }
 
-.dark-mode {
-  background-color: #333 !important;
-  color: #fff;
-}
-
-.light-mode {
-  background-color: green !important;
-  color: #333;
-}
 svg text {
   animation: stroke 3.5s forwards alternate;
   stroke-width: 90px;
@@ -137,10 +127,11 @@ svg text {
   font-size: 19.5rem;
   letter-spacing: 0.4rem;
 }
+
 .header-container {
-  /* background-color: #333; */
   padding: 0;
 }
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -164,9 +155,6 @@ svg text {
 }
 
 @media (max-width: 900px) {
-}
-
-@media (max-width: 900px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -179,18 +167,22 @@ svg text {
   table {
     font-size: 0.5rem;
   }
+
   button {
     font-size: 0.7rem;
   }
+
   th,
   td {
     padding: 0.2rem;
   }
+
   .buttontd {
     padding: 0.2rem;
     text-align: center;
     align-self: center;
   }
+
   .full-url {
     width: 49vw;
   }
@@ -201,7 +193,14 @@ svg text {
     background-color: rgb(26, 25, 25);
     color: white;
   }
+
   h1 {
     color: white;
+  }
+  a {
+    color: aquamarine;
+  }
+  a:hover {
+    color: gold;
   }
 }
