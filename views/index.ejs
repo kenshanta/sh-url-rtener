@@ -50,12 +50,20 @@
           <% if (urls && urls.length >0) { %> <% urls.forEach(url => { %>
           <tr>
             <td>
-              <a href="<%= url.full_url %>" target="_blank" class="full-url"
+              <a
+                onclick="submitForm('<%= url.short_url %>')"
+                href="<%= url.full_url %>"
+                target="_blank"
+                class="full-url"
                 ><%= url.full_url %></a
               >
             </td>
             <td class="short-url">
-              <a href="<%= url.full_url %>" target="_blank"
+              <a
+                onclick="submitForm('<%= url.short_url %>')"
+                class="short-url"
+                href="<%= url.full_url %>"
+                target="_blank"
                 ><%= url.short_url %></a
               >
               <form id="url-form" method="post" action="/:shortUrl">
@@ -72,7 +80,7 @@
                   name="shortUrl"
                   id="shortUrl"
                   type="submit"
-                  value="<%= url.short_url %>"
+                  value="<%= url.hort_url %>"
                 >
                   Delete
                 </button>
