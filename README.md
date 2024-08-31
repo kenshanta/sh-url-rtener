@@ -56,21 +56,17 @@ To install and run the project, follow these steps:
 
 💄 _Add styling_ 
 - 📝 _Theme and universal font_ 
-- 📝 _Toasters_
+- ✅ _Toasters_
 - ✅ _Responsive design_
 - ✅ _Banner alignment_
   
 🌐 _State Management_
 - 📝 _Loader_
 - ✅ _Route Redirection_
+- 📝 ReCaptcha
+
 
 ## 👯 Contributors:
-
-Contributions are more than welcome, you can always add your name in a `contributions.md` file with the following
-format:
-- [Your Name](https://github.com/kenshanta)
-
-## Contributors:
 
  <a href="https://github.com/kenshanta/sh-url-t/graphs/contributors">
    <img src="https://contrib.rocks/image?repo=kenshanta/sh-url-t"/>
