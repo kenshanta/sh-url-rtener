@@ -2,7 +2,38 @@ html,
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  background-color: #f5f5f5;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, grey 0.5%, black 5%, black 100%);
+  background-size: 40px 40px;
+  animation: move 4s linear infinite;
+}
+.buttona {
+  --😀: rgb(40, 183, 135);
+  --😀😀: #2c9992;
+  --😀😀😀: #16747963;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.125em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff;
+  background: var(--😀);
+  border: 2px solid var(--😀😀);
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 0 var(--😀😀);
+  transform: skew(-10deg);
+  transition: all 0.1s ease;
+  filter: drop-shadow(0 15px 20px var(--😀😀😀));
+}
+
+.buttona:active {
+  letter-spacing: 0px;
+  transform: skew(-10deg) translateY(8px);
+  box-shadow: 0 0 0 var(--😀😀😀);
 }
 
 .container {
@@ -80,6 +111,7 @@ th {
 
 a {
   text-decoration: none;
+  color: rgb(40, 183, 135);
 }
 
 a:hover {
@@ -141,6 +173,15 @@ svg text {
   }
 }
 
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
 @keyframes prixClipFix {
   0% {
     clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
@@ -188,18 +229,23 @@ svg text {
   }
 }
 
-@media screen and (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: light) {
   body {
-    background-color: rgb(26, 25, 25);
-    color: white;
+    background: linear-gradient(
+      135deg,
+      grey 0.5%,
+      whitesmoke 5%,
+      whitesmoke 100%
+    );
+    background-size: 40px 40px;
+    animation: move 3s linear infinite;
+    color: black;
   }
 
   h1 {
     color: white;
   }
-  a {
-    color: aquamarine;
-  }
+
   a:hover {
     color: gold;
   }
