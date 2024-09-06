@@ -8,6 +8,7 @@ body {
   background-size: 40px 40px;
   animation: move 4s linear infinite;
 }
+
 .buttona {
   --😀: rgb(40, 183, 135);
   --😀😀: #2c9992;
@@ -28,6 +29,7 @@ body {
   transform: skew(-10deg);
   transition: all 0.1s ease;
   filter: drop-shadow(0 15px 20px var(--😀😀😀));
+  margin-top: 1rem;
 }
 
 .buttona:active {
@@ -40,8 +42,6 @@ body {
   display: flex;
   flex-direction: column;
   padding: 1.3rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  min-height: 100%;
 }
 
 .full-url {
@@ -49,15 +49,10 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 59vw;
+  /* width: 59vw; */
 }
 
 .short-url {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0;
   padding: 0.7rem;
 }
 
@@ -76,10 +71,79 @@ label {
   margin-bottom: 5px;
 }
 
-input {
-  width: calc(100% - 20px);
-  padding: 0.5rem;
-  margin-bottom: 0.7rem;
+.inputbox {
+  position: relative;
+}
+
+.inputbox input {
+  padding: 0.6rem;
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  font-size: 1em;
+  color: #8f8f8f;
+  letter-spacing: 00.05em;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span {
+  color: white;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0, 75em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: rgb(40, 183, 135);
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+  opacity: 0.7;
+}
+
+.inputbox input:valid ~ i,
+.inputbox input:focus ~ i {
+  height: 44px;
+}
+
+.copy-btn {
+  background-color: transparent;
+  color: rgb(180, 176, 176);
+}
+
+.copy-btn:hover {
+  color: rgb(40, 183, 135);
+}
+
+.dlt-button {
+  background-color: transparent;
+  color: rgb(180, 176, 176);
+}
+
+.dlt-button:hover {
+  color: rgb(40, 183, 135);
 }
 
 button {
@@ -98,10 +162,9 @@ table {
 
 th,
 td {
-  border: 1px solid #ddd;
-  padding: 0.7rem;
-  text-align: left;
-  color: #9eb3c2;
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #dddddd66;
 }
 
 th {
@@ -116,6 +179,9 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.actions-td {
 }
 
 .buttontd {
@@ -202,7 +268,7 @@ svg text {
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
-    min-height: 75%;
+    min-height: 80%;
   }
 
   table {
@@ -226,6 +292,14 @@ svg text {
 
   .full-url {
     width: 49vw;
+  }
+
+  .buttona {
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 0.7rem;
+    box-shadow: 0 6px 0 var(--😀😀);
+    filter: drop-shadow(0 10px 15px var(--😀😀😀));
   }
 }
 
