@@ -29,8 +29,11 @@
           </text>
         </svg>
         <form action="/shorten" method="post">
-          <label for="fullUrl">Enter URL to shorten:</label>
-          <input type="url" name="fullUrl" id="fullUrl" required />
+          <div class="inputbox">
+            <input type="url" name="fullUrl" id="fullUrl" required />
+            <span>Enter URL to shorten:</span>
+            <i></i>
+          </div>
           <button class="buttona" type="submit">Shorten</button>
         </form>
       </div>
@@ -69,22 +72,23 @@
               <form id="url-form" method="post" action="/:shortUrl">
                 <input type="hidden" name="shortUrl" id="short-url" />
               </form>
-              <button class="copy-btn" data-url="<%= url.full_url %>">
-                <i class="fa fa-copy"></i>
-              </button>
             </td>
             <td><%= url.clicks %></td>
-            <td>
+            <td class="actions-td">
               <form method="post" action="/delete" class="buttontd">
                 <button
                   name="shortUrl"
                   id="shortUrl"
                   type="submit"
                   value="<%= url.short_url %>"
+                  class="dlt-button"
                 >
                   <i class="fa fa-trash"></i>
                 </button>
               </form>
+              <button class="copy-btn" data-url="<%= url.full_url %>"></button>
+                <i class="fa fa-copy"></i>
+              </button>
             </td>
           </tr>
           <% }); %> <% } else { %>
