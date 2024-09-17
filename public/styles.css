@@ -4,7 +4,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, grey 0.5%, black 5%, black 100%);
+  background: linear-gradient(135deg, grey 0.5%, #333 5%, #333 100%);
   background-size: 40px 40px;
   animation: move 4s linear infinite;
 }
@@ -29,7 +29,7 @@ body {
   transform: skew(-10deg);
   transition: all 0.1s ease;
   filter: drop-shadow(0 15px 20px var(--😀😀😀));
-  margin-top: 1rem;
+  margin: 1rem 0 0 1rem;
 }
 
 .buttona:active {
@@ -49,7 +49,6 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* width: 59vw; */
 }
 
 .short-url {
@@ -126,6 +125,14 @@ label {
 .inputbox input:valid ~ i,
 .inputbox input:focus ~ i {
   height: 44px;
+}
+
+input:is(:-webkit-autofill, :autofill),
+input.span:is(:-webkit-autofill, :autofill) {
+  border: 3px dotted orange;
+  height: 60%;
+  background: rgb(40, 183, 135);
+  /* transition: 0.5s; */
 }
 
 .copy-btn {
@@ -313,7 +320,7 @@ svg text {
     );
     background-size: 40px 40px;
     animation: move 3s linear infinite;
-    color: black;
+    color: #333;
   }
 
   h1 {
@@ -322,5 +329,16 @@ svg text {
 
   a:hover {
     color: gold;
+  }
+
+  svg text {
+    animation: stroke 3.5s forwards alternate;
+    stroke-width: 90px;
+    stroke: white;
+    font-size: 19.5rem;
+    letter-spacing: 0.4rem;
+  }
+  .inputbox input:focus ~ span {
+    color: #333;
   }
 }
