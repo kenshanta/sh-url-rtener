@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>URL Shortener</title>
     <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
   </head>
 
   <body>
@@ -61,35 +65,33 @@
                 ><%= url.full_url %></a
               >
             </td>
-            <td class="short-url">
+            <td>
               <a
                 onclick="submitForm('<%= url.short_url %>')"
-                class="short-url"
                 href="<%= url.full_url %>"
                 target="_blank"
-                ><%= url.short_url %></a
               >
-              <form id="url-form" method="post" action="/:shortUrl">
-                <input type="hidden" name="shortUrl" id="short-url" />
-              </form>
+                <%= url.short_url %>
+              </a>
             </td>
             <td><%= url.clicks %></td>
-            <td class="actions-td">
-              <form method="post" action="/delete" class="buttontd">
+            <td>
+              <form
+                method="post"
+                action="/delete"
+                style="display: inline-block; align-items: center"
+              >
                 <button
                   name="shortUrl"
                   id="shortUrl"
-                  type="submit"
                   value="<%= url.short_url %>"
-                  class="dlt-button"
                 >
                   <i class="fa fa-trash"></i>
                 </button>
+                <button data-url="<%= url.full_url %>">
+                  <i class="fa fa-copy"></i>
+                </button>
               </form>
-              <button name="copy" type="reset" class="copy-btn" data-url="<%= url.full_url %>">
-                <i class="fa fa-copy"></i>
-              </button>
-              </button>
             </td>
           </tr>
           <% }); %> <% } else { %>
@@ -108,6 +110,7 @@
     document.getElementById("short-url").value = url;
     document.getElementById("url-form").submit();
   }
+
   const copyBtns = document.querySelectorAll(".copy-btn");
   copyBtns.forEach((btn) => {
     btn.addEventListener("click", () => {

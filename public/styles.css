@@ -49,10 +49,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.short-url {
-  padding: 0.7rem;
+  width: 49vw;
 }
 
 h1,
@@ -145,7 +142,6 @@ input.span:is(:-webkit-autofill, :autofill) {
 }
 
 .dlt-button {
-  background-color: transparent;
   color: rgb(180, 176, 176);
 }
 
@@ -172,11 +168,7 @@ td {
   padding: 8px;
   text-align: center;
   border-bottom: 1px solid #dddddd66;
-}
-
-th {
-  background-color: #333;
-  color: #9eb3c2;
+  color: white;
 }
 
 a {
@@ -295,10 +287,6 @@ svg text {
     padding: 0.2rem;
     text-align: center;
     align-self: center;
-  }
-
-  .full-url {
-    width: 49vw;
   }
 
   .buttona {
