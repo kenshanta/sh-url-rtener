@@ -42,7 +42,7 @@ app.post("/shorten", async (req, res) => {
     res.redirect("/");
   } catch (error) {
     console.log("failed to get all urls. Error:", error);
-    res.status(500).send(`${error}`);
+    res.status(500).send(error);
   }
 });
 
@@ -52,7 +52,7 @@ app.post("/delete", async (req, res) => {
     res.redirect("/");
   } catch (error) {
     console.log("failed to get all urls. Error:", error);
-    res.status(500).send(`${error}`);
+    res.status(500).send(error);
   }
 });
 app.post("/:shortUrl", async (req, res) => {
@@ -61,7 +61,7 @@ app.post("/:shortUrl", async (req, res) => {
     res.redirect("/");
   } catch (error) {
     console.log("failed to get all urls. Error:", error);
-    res.status(500).send(`${error}`);
+    res.status(500).send(error);
   }
 });
 module.exports = app;
